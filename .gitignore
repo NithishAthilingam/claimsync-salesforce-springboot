@@ -1,0 +1,23 @@
+# Salesforce DX
+.sf/
+.sfdx/
+.localdevserver/
+
+# Java / Maven
+target/
+*.jar
+*.war
+*.class
+
+# Python
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+*.pyc
+
+# Environment & IDE
+.env
+.DS_Store
+.idea/
+.vscode/

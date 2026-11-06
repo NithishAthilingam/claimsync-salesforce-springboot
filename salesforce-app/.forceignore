@@ -1,0 +1,6 @@
+package.xml
+**/.DS_Store
+**/*.orig
+.sfdx
+.sf
+.localdevserver
