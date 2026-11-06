@@ -58,10 +58,11 @@ flowchart LR
 sf org login web --alias claimsync-dev --set-default
 ```
 
-### 2. Deploy Custom Objects (`Policy__c`, `Claim__c`), Apex Trigger, and Classes
+### 2. Deploy Custom Objects (`Policy__c`, `Claim__c`), Permission Set, Trigger, and Classes
 ```powershell
 cd salesforce-app
 sf project deploy start --target-org claimsync-dev
+sf org assign permset --name ClaimSync_Admin --target-org claimsync-dev
 ```
 
 ### 3. Execute Apex `@isTest` Suite & Verify >95% Code Coverage
