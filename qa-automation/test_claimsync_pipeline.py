@@ -5,6 +5,7 @@ Automated Quality Engineering Test Suite for ClaimSync
 
 from datetime import date, timedelta
 from pathlib import Path
+import re
 import pytest
 
 from claimsync_qa_harness import (
@@ -115,7 +116,7 @@ def test_domain_validation_boundary_rejections(amount, limit, inc_offset, eff_of
         policyEffectiveDate=(today + timedelta(days=eff_offset)).isoformat(),
         incidentDescription="Boundary validation test case.",
     )
-    with pytest.raises(ValueError, match=expected_error):
+    with pytest.raises(ValueError, match=re.escape(expected_error)):
         evaluate_claim_contract(payload)
 
 
